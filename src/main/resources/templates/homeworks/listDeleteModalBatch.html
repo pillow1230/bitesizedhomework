@@ -1,0 +1,24 @@
+<!--TABLE-->
+<div class="table-responsive" id="containerFields" data-th-fragment="homework-entityModalConfirmBody" data-th-with="collectionLink=${@linkBuilder.of('HomeworksCollectionThymeleafController')},itemLink=${@linkBuilder.of('HomeworksItemThymeleafController')}">
+    <table id="homework-entity-table-items-to-remove-batch" data-data-load-url="${collectionLink.to('datatablesByIdsIn')}">
+      <thead>
+        <tr>
+          <th data-data="description" data-th-text="#{label_homework_description}">description</th>
+          <th data-data="level" data-th-text="#{label_homework_level}">level</th>
+          <th data-data="name" data-th-text="#{label_homework_name}">name</th>
+          <th data-data="question" data-th-text="#{label_homework_question}">question</th>
+          <th data-data="eclass" data-th-text="#{label_homework_eclass}">eclass</th>
+        </tr>
+      </thead>
+      <tbody data-th-remove="all">
+        <tr>
+          <td>description</td>
+          <td>level</td>
+          <td>name</td>
+          <td>question</td>
+          <td>eclass</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<!-- /TABLE -->

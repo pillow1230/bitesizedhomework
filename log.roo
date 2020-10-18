@@ -1,0 +1,73 @@
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-10-04 23:51:18
+hint
+project setup --topLevelPackage com.pillow.bitesizedhomework
+hint
+jpa setup --provider HIBERNATE --database MYSQL --databaseName bitesizedhomework
+hint
+entity jpa --class ~.model.User
+entity jpa --class ~.model.User --permitReservedWords 
+hint
+focus --class ~.model.User
+field string --fieldName username
+field string password
+// [failed] entity jpa --class ~.model.Class
+entity jpa --class ~.model.EClass
+focus --class ~.model.EClass
+// [failed] field date --fieldName year --type java.util.Date
+field date --fieldName classYear --type java.util.Date
+field string name
+field string description
+entity jpa --class ~.model.Homework
+field string description
+// [failed] field number --fieldName level --type int
+field number --fieldName level --type int --permitReservedWords 
+field string name
+entity jpa --class ~.model.Question
+field date timeCompletion --type java.util.Date
+field number --fieldName mark --type int
+field string teacherAnswer
+field string studentAnswer
+// [failed] enum type --class ~.enum.QuestionType
+enum type --class ~.model.QuestionType
+// [failed] enum constant --name MUTIPLE_CHOICE --class ~.model.Question
+enum constant --name MUTIPLE_CHOICE --class ~.model.QuestionType
+enum constant --name FILL_IN_THE_BLANK --class ~.model.QuestionType
+enum constant --name PRONOUNCIATION --class ~.model.QuestionType
+focus --class ~.model.Question
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-10-05 00:06:10
+focus --class ~.model.Question
+field enum --fieldName questionType --type ~.model.QuestionType --enumType STRING
+field set --fieldName homeworks --type ~.model.Homework --mappedBy question
+focus --class ~.model.Homework
+field set --fieldName questions --type ~.model.Question --mappedBy homework
+focus --class ~.model.EClass
+field set --fieldName homeworks --type ~.model.Homework --mappedBy eclass
+hint
+repository jpa --all 
+hint
+service --all 
+hint
+web mvc setup
+hint
+web mvc controller --all
+hint
+web mvc controller --all 
+hint
+web mvc view setup --type THYMELEAF 
+web mvc controller --all 
+web mvc finder --all --responseType THYMELEAF 
+web mvc controller --all --pathPrefix /api
+hint
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-10-05 00:17:51
+hint
+web mvc controller --entity ~.model.EClass 
+web mvc controller --entity ~.model.EClass --force
+// [failed] web mvc controller --entity ~.controller.EClass --force
+web mvc controller --entity ~.model.EClass --pathPrefix ~.controller
+web mvc detail --all 
+web mvc templates setup --type THYMELEAF 
+web mvc controller --all --responseType THYMELEAF --package com.pillow.bitesizedhomework.web.thymeleaf
+web mvc controller --all --responseType THYMELEAF --package com.pillow.bitesizedhomework.web.json
+web mvc controller --all --responseType JSON --package com.pillow.bitesizedhomework.web.json
+hint
+security setup --provider SPRINGLETS_JPA 

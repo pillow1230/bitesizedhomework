@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-decorate="~{layouts/default-list-layout}">
+    <head id="head">
+
+    <title data-th-text="|#{label_show_entity(#{label_homework})}|">Show Homework - Spring Roo application</title>
+
+  </head>
+
+  <body id="body">
+
+    <header role="banner">
+      <!-- Content replaced by layout of the page displayed -->
+    </header>
+
+    <!--CONTAINER-->
+    <div class="container bg-container">
+      <!-- CONTENT -->
+      <!--
+        Only the inner content of the following tag "section" is included
+        within the template, in the section "content"
+      -->
+      <section data-th-fragment="inline-content" data-layout-fragment="content" data-th-object="${homework}">
+        <div>
+
+          <!-- CONTENT -->
+            <div id="mainEntityFieldSet">
+              <ul class="list-unstyled" id="containerFields">
+                  <li id="homework-description-field" data-z="b83a2143">
+            	      <strong data-th-text="#{label_homework_description}">description</strong>
+                    <span data-th-text="*{{description}}">descriptionValue</span>
+         	        </li>
+                  <li id="homework-level-field" data-z="19036b43">
+            	      <strong data-th-text="#{label_homework_level}">level</strong>
+                    <span data-th-text="*{{level}}">levelValue</span>
+         	        </li>
+                  <li id="homework-name-field" data-z="c587b1b">
+            	      <strong data-th-text="#{label_homework_name}">name</strong>
+                    <span data-th-text="*{{name}}">nameValue</span>
+         	        </li>
+                  <li id="homework-question-field" data-z="b49a4dbb">
+            	      <strong data-th-text="#{label_homework_question}">question</strong>
+                    <span data-th-text="*{{question}}">questionValue</span>
+         	        </li>
+                  <li id="homework-eclass-field" data-z="3edfcf1b">
+            	      <strong data-th-text="#{label_homework_eclass}">eclass</strong>
+                    <span data-th-text="*{{eclass}}">eclassValue</span>
+         	        </li>
+              </ul>
+            </div>
+
+        </div>
+
+      </section>
+      <!-- /CONTENT -->
+  </div>
+  <!-- /CONTAINER -->
+
+  <footer class="container">
+    <!-- Content replaced by layout of the page displayed -->
+  </footer>
+
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so that the pages load faster -->
+  <!-- JavaScript loaded by layout of the page displayed -->
+  <!--
+       Only the inner content of the following tag "javascript" is included
+       within the template, in the div "javascript"
+      -->
+  <div data-layout-fragment="javascript">
+  </div>
+
+  </body>
+
+</html>

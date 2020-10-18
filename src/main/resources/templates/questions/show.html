@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-decorate="~{layouts/default-list-layout}">
+  <head id="head">
+
+    <title data-th-text="|#{label_show_entity(#{label_question})}|">Show Question - Spring Roo application</title>
+
+  </head>
+
+  <body id="body">
+
+    <header role="banner">
+      <!-- Content replaced by layout of the page displayed -->
+    </header>
+
+    <!--CONTAINER-->
+    <div class="container bg-container">
+      <!-- CONTENT -->
+      <!--
+        Only the inner content of the following tag "section" is included
+        within the template, in the section "content"
+      -->
+      <section data-layout-fragment="content" data-th-object="${question}">
+        <div class="container-fluid content">
+
+          <!-- CONTENT -->
+          <h1 data-th-text="#{label_show_entity(#{label_question})}">Show Question</h1>
+
+            <div id="mainEntityFieldSet">
+              <h2 data-th-text="#{label_data_entity(#{label_question})}">Question data</h2>
+              <ul class="list-unstyled" id="containerFields">
+                  <li id="question-timecompletion-field" data-z="af3f33f1">
+            	      <strong data-th-text="#{label_question_timecompletion}">timeCompletion</strong>
+                    <span data-th-text="*{{timeCompletion}}">timeCompletionValue</span>
+         	        </li>
+                  <li id="question-mark-field" data-z="8a0311d1">
+            	      <strong data-th-text="#{label_question_mark}">mark</strong>
+                    <span data-th-text="*{{mark}}">markValue</span>
+         	        </li>
+                  <li id="question-teacheranswer-field" data-z="a7bd25ad">
+            	      <strong data-th-text="#{label_question_teacheranswer}">teacherAnswer</strong>
+                    <span data-th-text="*{{teacherAnswer}}">teacherAnswerValue</span>
+         	        </li>
+                  <li id="question-studentanswer-field" data-z="a421968d">
+            	      <strong data-th-text="#{label_question_studentanswer}">studentAnswer</strong>
+                    <span data-th-text="*{{studentAnswer}}">studentAnswerValue</span>
+         	        </li>
+                  <li id="question-questiontype-field" data-z="939ded91">
+            	      <strong data-th-text="#{label_question_questiontype}">questionType</strong>
+                    <span data-th-text="*{{questionType}}">questionTypeValue</span>
+         	        </li>
+                  <li id="question-homework-field" data-z="3981071">
+            	      <strong data-th-text="#{label_question_homework}">homework</strong>
+                    <span data-th-text="*{{homework}}">homeworkValue</span>
+         	        </li>
+              </ul>
+            </div>
+
+
+          <div class="clearfix">
+            <div class="pull-right">
+             <a id="Question_edit" href="edit.html" class="btn btn-primary" data-th-title="#{label_goEdit}" data-th-href="${@linkBuilder.of('QuestionsItemThymeleafController').to('editForm').with('question', question.id)}" data-th-text="#{label_edit}">Edit</a>
+            </div>
+          </div>
+
+
+          <div class="clearfix">
+            <div class="pull-left">
+              <a id="Question_list" href="list.html" class="btn btn-default" data-th-title="#{label_goBack}" data-th-href="${@linkBuilder.of('QuestionsCollectionThymeleafController').to('list')}">
+  	             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+  	             <span data-th-text="#{label_back}">Back</span>
+  	          </a>
+            </div>
+          </div>
+        </div>
+
+      </section>
+      <!-- /CONTENT -->
+  </div>
+  <!-- /CONTAINER -->
+
+  <footer class="container">
+    <!-- Content replaced by layout of the page displayed -->
+  </footer>
+
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so that the pages load faster -->
+  <!-- JavaScript loaded by layout of the page displayed -->
+  <!--
+       Only the inner content of the following tag "javascript" is included
+       within the template, in the div "javascript"
+      -->
+  <div data-layout-fragment="javascript">
+  </div>
+
+  </body>
+
+</html>
